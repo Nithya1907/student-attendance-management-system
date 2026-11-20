@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Backend: install", "type": "shell", "command": "npm install", "options": { "cwd": "${workspaceFolder}/backend" }, "problemMatcher": [] },
+    { "label": "Frontend: install", "type": "shell", "command": "npm install", "options": { "cwd": "${workspaceFolder}/frontend" }, "problemMatcher": [] },
+    { "label": "Backend: seed database", "type": "shell", "command": "npm run seed", "options": { "cwd": "${workspaceFolder}/backend" }, "problemMatcher": [] },
+    { "label": "Backend: start API", "type": "shell", "command": "npm run dev", "options": { "cwd": "${workspaceFolder}/backend" }, "isBackground": true, "problemMatcher": [] },
+    { "label": "Frontend: start UI", "type": "shell", "command": "npm run dev", "options": { "cwd": "${workspaceFolder}/frontend" }, "isBackground": true, "problemMatcher": [] },
+    { "label": "Backend: run tests", "type": "shell", "command": "npm test", "options": { "cwd": "${workspaceFolder}/backend" }, "problemMatcher": [] },
+    { "label": "Run both servers", "dependsOn": ["Backend: start API", "Frontend: start UI"], "problemMatcher": [] }
+  ]
+}
